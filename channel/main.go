@@ -7,7 +7,7 @@ func main() {
 }
 
 func Test() {
-	bufchannel := make(chan int, 1) // this is a buffered channel because it has capacity. so block main goroutine wont block if len = 1
+	bufchannel := make(chan int, 1) // this is a buffered channel because it has capacity. so main goroutine wont be blocked if bufchannel's len = 1
 	unbufchannel := make(chan int)  // it has not capacity, so it will block main goroutine
 
 	fmt.Println(cap(bufchannel))   // 1
