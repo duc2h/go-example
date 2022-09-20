@@ -9,13 +9,13 @@ func main() {
 func runA() {
 	a := make([]int, 1, 2)
 
-	fmt.Printf("1: len: %d, cap: %d, address: %d \n", len(a), cap(a), &a[0])
+	fmt.Printf("1: len: %d, cap: %d, address_0: %d \n", len(a), cap(a), &a[0])
 	a = append(a, 1)
 
-	fmt.Printf("2: len: %d, cap: %d, address: %d \n", len(a), cap(a), &a[0])
+	fmt.Printf("2: len: %d, cap: %d, address_0: %d \n", len(a), cap(a), &a[0])
 
 	a = append(a, 3) // require new allocation
-	fmt.Printf("A: len: %d, cap: %d, address: %d \n", len(a), cap(a), &a[0])
+	fmt.Printf("A: len: %d, cap: %d, address_0: %d \n", len(a), cap(a), &a[0])
 	fmt.Println(a)
 
 	b := append(a, 4) // len = cap => still use old allocation
