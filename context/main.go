@@ -16,7 +16,8 @@ func main() {
 	go f1(ctx)
 	go f2(ctx)
 
-	time.Sleep(time.Second * 3)
+	<-ctx.Done()
+	time.Sleep(time.Millisecond * 3)
 }
 
 func f1(ctx context.Context) {
