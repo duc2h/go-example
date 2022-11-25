@@ -2,24 +2,25 @@ package main
 
 import (
 	"container/list"
+	"fmt"
 )
 
 func main() {
-	runLL()
+	runQueueSlice()
 }
 
 // make a queue with slice
 func runQueueSlice() {
 	q := []string{"1", "2"}
-	q = enqueueSlice(q, "3")
-	q = enqueueSlice(q, "4")
+	// q = enqueueSlice(q, "3")
+	// q = enqueueSlice(q, "4")
 
-	_, q = dequeueSlice(q)
-	// fmt.Println(s)
-	// fmt.Println(q)
-	// fmt.Println("==============")
+	s, q := dequeueSlice(q)
+	fmt.Println(s)
+	fmt.Println(q)
+	fmt.Println("==============")
 
-	dequeueSlice(q)
+	// dequeueSlice(q)
 	// fmt.Println(s)
 	// fmt.Println(q)
 	// fmt.Println("==============")
@@ -43,7 +44,7 @@ func enqueueSlice(q []string, ele string) []string {
 	return q
 }
 
-/////
+// ///
 // in order to avoid memory leak, we can use linked list.
 func runLL() {
 	q := list.New()
