@@ -1,15 +1,15 @@
 package main
 
-import "fmt"
+// still fail
 
 // https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 
-func main() {
+// func main() {
 
-	// fmt.Println(strStr("sabutsad", "sad"))
+// 	// fmt.Println(strStr("sabutsad", "sad"))
 
-	fmt.Println(strStr("mississippi", "issip"))
-}
+// 	fmt.Println(strStr("mississippi", "issip"))
+// }
 
 func strStr(haystack string, needle string) int {
 	index := 0
