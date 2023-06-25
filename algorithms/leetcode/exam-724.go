@@ -39,6 +39,9 @@ package main
 // 	fmt.Println(r)
 // }
 
+// 1,2,3,3 =>
+
+// 8 - 2 = 6
 func pivotIndex(nums []int) int {
 	var total, sum, tmp int
 
@@ -56,6 +59,30 @@ func pivotIndex(nums []int) int {
 		}
 
 		tmp = v
+	}
+
+	return -1
+}
+
+func pivotIndex1(nums []int) int {
+	for i := 0; i < len(nums); i++ {
+		var (
+			left  = 0
+			right = 0
+		)
+
+		for j := 0; j < i; j++ {
+			left += nums[j]
+		}
+
+		for j := i + 1; j < len(nums); j++ {
+			right += nums[j]
+		}
+
+		if left == right {
+			return i
+		}
+
 	}
 
 	return -1

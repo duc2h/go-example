@@ -22,6 +22,14 @@ package main
 // Input: s = "(]"
 // Output: false
 
+// [{()}] => true
+// [{}(){{] => false
+// [{}()] => true
+// [}{[]] => false
+// []
+// }}
+// {)
+
 // func main() {
 // 	fmt.Println(isValid("[][]{}"))
 // 	fmt.Println(isValid("[][(]){}"))

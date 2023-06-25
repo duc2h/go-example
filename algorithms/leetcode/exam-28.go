@@ -12,25 +12,17 @@ package main
 // }
 
 func strStr(haystack string, needle string) int {
-	index := 0
-	tmp := 0
+	length := len(needle)
 	for i := 0; i < len(haystack); i++ {
-		s := haystack[i]
+		index := i + length
+		if index > len(haystack) {
+			return -1
+		}
 
-		if s == needle[index] {
-			if index == 0 {
-				tmp = i
-			}
-			index++
-			if index == len(needle) {
-				return tmp
-			}
-		} else {
-			index = 0
-			if s == needle[index] {
-				tmp = i
-				index++
-			}
+		sub := haystack[i:index]
+
+		if sub == needle {
+			return i
 		}
 	}
 

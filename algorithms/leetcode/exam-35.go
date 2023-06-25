@@ -4,11 +4,11 @@ import "fmt"
 
 // https://leetcode.com/problems/search-insert-position/
 
-func main() {
-	// a := []int{1, 3, 5, 6}
-	a := []int{1}
-	fmt.Println(searchInsert(a, 0))
-}
+// func main() {
+// 	// a := []int{1, 3, 5, 6}
+// 	a := []int{1}
+// 	fmt.Println(searchInsert(a, 0))
+// }
 
 func searchInsert(nums []int, target int) int {
 	return binarySearch1(nums, target, 0, len(nums)-1)

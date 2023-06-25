@@ -15,7 +15,6 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/test", TestEndpoint).Methods("GET")
-
 	srv := &http.Server{
 		Addr:    ":8080",
 		Handler: router,
