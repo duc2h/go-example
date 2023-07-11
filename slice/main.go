@@ -68,3 +68,16 @@ func test() {
 	fmt.Printf("9: len_b: %d, cap_b: %d, address_0: %d, address_1 %d \n", len(b), cap(b), &b[0], &b[1])
 	fmt.Println(b)
 }
+
+type Person struct {
+}
+
+func emptySlice() {
+	var slice []*Person          // nil slice
+	slice1 := []*Person{}        // empty slice
+	slice2 := make([]*Person, 0) // empty slice
+
+	fmt.Println(slice == nil)
+	fmt.Println(slice1 == nil)
+	fmt.Println(slice2 == nil)
+}

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // https://leetcode.com/problems/longest-consecutive-sequence/
 
 // Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
@@ -18,10 +16,10 @@ import "fmt"
 // Input: nums = [0,3,7,2,5,8,4,6,0,1]
 // Output: 9
 
-func main() {
-	a := []int{100, 4, 200, 1, 3, 2}
-	fmt.Println(longestConsecutive(a))
-}
+// func main() {
+// 	a := []int{100, 4, 200, 1, 3, 2}
+// 	fmt.Println(longestConsecutive(a))
+// }
 
 func longestConsecutive(nums []int) int {
 	if len(nums) == 0 {

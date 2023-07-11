@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Given a string s, return the longest
 // palindromic substring in s.
 
@@ -12,10 +14,10 @@ package main
 // Input: s = "cbbd"
 // Output: "bb"
 
-// func main() {
-// 	s := longestPalindrome("cbbd")
-// 	fmt.Println(s)
-// }
+func main() {
+	s := longestPalindrome("dbbd")
+	fmt.Println(s)
+}
 
 // babad
 // step1: loop1 l: 0, r: 0, len: 0 => res: b,  l: -1, r: 1, len: 1
