@@ -1,20 +1,18 @@
 package main
 
-import "fmt"
-
 // https://www.scaler.com/topics/sliding-window-algorithm/
 
 // We have n = 5, arr[5] = {10,20,10,30,5} and m = 3 Then the result would be 60 (20+10+30).
 // We have n = 7, arr[7] = {2,10,17,1,9,13,4} and m = 4 Then the result would be 40 (17+1+9+13).
 
-func main() {
-	a := []int{10, 20, 10, 30, 5}
-	r := maxScore(a, 3)
+// func main() {
+// 	a := []int{10, 20, 10, 30, 5}
+// 	r := maxScore1(a, 3)
 
-	fmt.Println(r)
-}
+// 	fmt.Println(r)
+// }
 
-func maxScore(cardPoints []int, k int) int {
+func maxScore1(cardPoints []int, k int) int {
 	var (
 		length = len(cardPoints)
 		max    = 0
