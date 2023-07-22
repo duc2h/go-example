@@ -4,13 +4,7 @@ import "fmt"
 
 // https://leetcode.com/problems/first-unique-character-in-a-string/description/
 
-// func main() {
-
-// 	s := "leetcode"
-// 	a := firstUniqChar(s)
-// 	fmt.Println(a)
-
-// }
+// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
 
 // Input: s = "leetcode"
 // Output: 0
@@ -22,6 +16,14 @@ import "fmt"
 
 // Input: s = "aabb"
 // Output: -1
+
+// func main() {
+
+// 	s := "leetcode"
+// 	a := firstUniqChar(s)
+// 	fmt.Println(a)
+
+// }
 
 func firstUniqChar(s string) int {
 	m := make(map[rune]int)

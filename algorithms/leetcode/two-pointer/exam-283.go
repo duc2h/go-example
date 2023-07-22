@@ -15,13 +15,30 @@ package main
 // Output: [0]
 
 // func main() {
-// 	a := []int{0, 1, 0, 2, 0, 13}
+// 	a := []int{1, 0, 1, 0, 2, 0, 13}
 // 	b := []int{0}
-// 	moveZeroesBest(a)
-// 	moveZeroesBest(b)
+// 	moveZeroesBest1(a)
+// 	moveZeroesBest1(b)
 // 	fmt.Println(a)
 // 	fmt.Println(b)
 // }
+
+func moveZeroesBest1(nums []int) {
+	index := 0
+
+	for i := 0; i < len(nums); i++ {
+		num := nums[i]
+		if num != 0 {
+			nums[index] = num
+			index++
+		}
+	}
+
+	for i := index; i < len(nums); i++ {
+		nums[i] = 0
+	}
+
+}
 
 func moveZeroes(nums []int) {
 	for i := 0; i < len(nums); i++ {

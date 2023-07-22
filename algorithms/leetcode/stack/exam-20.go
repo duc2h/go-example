@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // https://leetcode.com/problems/valid-parentheses/
 
 // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -30,10 +32,32 @@ package main
 // }}
 // {)
 
-// func main() {
-// 	fmt.Println(isValid("[][]{}"))
-// 	fmt.Println(isValid("[][(]){}"))
-// }
+func main() {
+	fmt.Println(isValid1("}}"))
+}
+
+func isValid1(s string) bool {
+	var (
+		m     = map[rune]rune{}
+		stack = []rune{}
+	)
+
+	m['{'] = '}'
+	m['['] = ']'
+	m['('] = ')'
+
+	for _, c := range s {
+		if v, ok := m[c]; ok {
+			stack = append(stack, v)
+		} else if len(stack) == 0 || stack[len(stack)-1] != c {
+			return false
+		} else {
+			stack = stack[:len(stack)-1]
+		}
+	}
+
+	return len(stack) == 0
+}
 
 func isValid(s string) bool {
 	length := len(s)

@@ -21,11 +21,21 @@ package main
 // Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 
 // func main() {
-
-// 	a := []int{9, 6, 4, 2, 3, 5, 7, 0, 1}
-// 	r := missingNumber(a)
+// 	a := []int{3, 0, 1, 2}
+// 	r := missingNumber1(a)
 // 	fmt.Println(r)
 // }
+
+func missingNumber1(nums []int) int {
+	total := 0
+	temp := 0
+	for i := 0; i < len(nums); i++ {
+		total += i + 1
+		temp += nums[i]
+	}
+
+	return total - temp
+}
 
 func missingNumber(nums []int) int {
 	var (

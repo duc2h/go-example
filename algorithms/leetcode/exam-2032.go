@@ -4,7 +4,8 @@ import "fmt"
 
 // https://leetcode.com/problems/two-out-of-three/
 
-// Given three integer arrays nums1, nums2, and nums3, return a distinct array containing all the values that are present in at least two out of the three arrays. You may return the values in any order.
+// Given three integer arrays nums1, nums2, and nums3, return a distinct array containing all the values that are present in at least two out of the three arrays.
+// You may return the values in any order.
 
 // Example 1:
 

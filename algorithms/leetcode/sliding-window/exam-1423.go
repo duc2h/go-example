@@ -34,11 +34,11 @@ import "fmt"
 
 // it is related to this question: https://leetcode.com/discuss/interview-question/701938/google-max-sum-of-k-elements
 
-func main() {
-	a := []int{100, 40, 17, 9, 73, 75}
-	r := maxScore(a, 3)
-	fmt.Println(r)
-}
+// func main() {
+// 	a := []int{100, 40, 17, 9, 73, 75}
+// 	r := maxScore(a, 3)
+// 	fmt.Println(r)
+// }
 
 // explanation: 1, 2, 3, 4, 5, 6, 1
 // step1: max = 6, left = 2, right = 6.

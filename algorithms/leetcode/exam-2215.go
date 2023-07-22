@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // https://leetcode.com/problems/find-the-difference-of-two-arrays/
 
 // Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where:
@@ -22,13 +24,13 @@ package main
 // For nums1, nums1[2] and nums1[3] are not present in nums2. Since nums1[2] == nums1[3], their value is only included once and answer[0] = [3].
 // Every integer in nums2 is present in nums1. Therefore, answer[1] = [].
 
-// func main() {
-// 	n1 := []int{1, 2, 3, 3}
-// 	n2 := []int{1, 1, 2, 2}
-// 	r := findDifference(n1, n2)
+func main() {
+	n1 := []int{1, 2, 3}
+	n2 := []int{2, 4, 6}
+	r := findDifference(n1, n2)
 
-// 	fmt.Println(r)
-// }
+	fmt.Println(r)
+}
 
 func findDifference(nums1 []int, nums2 []int) [][]int {
 

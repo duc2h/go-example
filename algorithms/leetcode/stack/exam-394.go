@@ -34,6 +34,12 @@ import (
 
 // ba -> baba
 
+// 3[a2[c]d]
+// accdaccdaccd
+
+// 3, [, a, 2, [, c, ]
+// 3, [, a, cc, d, ]
+
 type Stack []string
 
 func (s *Stack) Push(str string) {
