@@ -15,7 +15,7 @@ func main() {
 			"A": {
 				{
 					Node:   "B",
-					Weight: 1,
+					Weight: 2,
 				},
 				{
 					Node:   "C",
@@ -182,6 +182,9 @@ func findShortestPath(start, end string, graph *Graph) ([]string, int) {
 	for i, j := 0, len(finalArr)-1; i < j; i, j = i+1, j-1 {
 		finalArr[i], finalArr[j] = finalArr[j], finalArr[i]
 	}
+
+	fmt.Println(path)
+	fmt.Println(dist)
 
 	return finalArr, dist[end]
 }
