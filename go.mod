@@ -3,8 +3,9 @@ module github-com/edarha/go-example
 go 1.20
 
 require (
+	github.com/ethereum/go-ethereum v1.13.3
 	github.com/gorilla/mux v1.8.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 )
 
 require (

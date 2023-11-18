@@ -5,6 +5,8 @@ import (
 	"log"
 	"math/big"
 	"strconv"
+
+	"github.com/ethereum/go-ethereum/common/math"
 )
 
 // how can we get value from a bit slot, then visualize it.
@@ -14,7 +16,7 @@ import (
 // price = 100000000 per amount.
 
 var (
-	amount_global = int64(200)
+	amount_global = int64(600000)
 	price_global  = int64(100000000)
 )
 
@@ -34,11 +36,17 @@ func main() {
 }
 
 func makeABitValuePositiveFalse() *big.Int {
-	amountBig := big.NewInt(amount_global)
-	priceBig := big.NewInt(price_global)
-	// add 160 bits slot for price. amountBig << 160
-	amountBigLefted := new(big.Int).Lsh(amountBig, 160)
 
+	a := new(big.Int).Lsh(big.NewInt(1), 32)
+
+	amountBig := big.NewInt(100000)
+	al := new(big.Int).Or(a, amountBig)
+	priceBig := math.MustParseBig256("0x4f82e73edb06d29ff62c91ec8f5ff06571bdeb29")
+	fmt.Println("len 1: ", len(al.Bytes()))
+	// add 160 bits slot for price. amountBig << 160
+	amountBigLefted := new(big.Int).Lsh(al, 160)
+
+	fmt.Println("len 2: ", len(amountBigLefted.Bytes()))
 	// merge amountBigLefted and priceBig.
 	fee := new(big.Int).Or(amountBigLefted, priceBig)
 
@@ -54,9 +62,22 @@ func getValueFromBit(fee *big.Int) (int64, uint32, *big.Int) { // isPositive, am
 	priceRighted := new(big.Int).Rsh(fee, 160)
 	amount := getAmount(priceRighted)
 
+	// get isPositive's value. fee>>192
 	isPositive := new(big.Int).Rsh(fee, 192).Int64()
 
 	return isPositive, amount, price
+}
+
+func getValueFromBit1(fee *big.Int) { // isPositive, amount, price
+	// get price's value. uint160(fee)
+	// ui160Bytes := BigToUint160(fee)
+	// price := new(big.Int).SetBytes(ui160Bytes[:])
+
+	// get amount's value. uint32(fee>>160)
+	priceRighted := new(big.Int).Rsh(fee, 160)
+	fmt.Println(priceRighted.String())
+
+	return
 }
 
 func makeABitValuePositiveTrue() *big.Int {

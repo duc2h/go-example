@@ -6,6 +6,7 @@ import "fmt"
 // f(1) = 1
 // f(2) = 2
 // n > 2 => f(n) = f(n-1) + f(n-2)
+// n == 2 || n == 1 => return 1.
 
 // for example: n = 4
 //1. f(4) = f(3) + f(2)
