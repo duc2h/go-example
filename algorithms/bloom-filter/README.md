@@ -1,0 +1,1 @@
+https://francisco-escher.medium.com/bloom-filters-and-go-1d5ac62557de
