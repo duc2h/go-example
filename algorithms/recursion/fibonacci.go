@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // fibonacci formula:
 // f(1) = 1
 // f(2) = 2
@@ -14,12 +12,12 @@ import "fmt"
 //3. f(4) = 1 + 1 + 1 = 3
 // => f(4) = 3
 
-func main() {
+// func main() {
 
-	a := fibonacci(4)
+// 	a := fibonacci(4)
 
-	fmt.Println(a)
-}
+// 	fmt.Println(a)
+// }
 
 func fibonacci(n int) int {
 	if n == 2 || n == 1 {

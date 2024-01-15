@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // https://leetcode.com/problems/word-break/
 
 // Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
@@ -23,12 +28,34 @@ package main
 // s = "bb"
 // wordDict = ["a","b","bbb","bbbb"]
 
-// func main() {
+func main() {
 
-// 	a := []string{"cats", "dog", "sand", "cat"}
-// 	r := wordBreak("catsanddog", a)
-// 	fmt.Println(r)
-// }
+	a := []string{"cats", "dog", "sand", "cat"}
+	r := wordBreak("catsanddog", a)
+	fmt.Println(r)
+}
 
-// func wordBreak(s string, wordDict []string) bool {
-// }
+func wordBreak(s string, wordDict []string) bool {
+	arr := []string{s}
+	mapDuplicate := map[string]bool{}
+	for len(arr) > 0 {
+		// dequeue()
+		remaining := arr[0]
+		arr = arr[1:]
+		if mapDuplicate[remaining] {
+			continue
+		}
+		for _, word := range wordDict {
+			if word == remaining {
+				return true
+			}
+
+			if strings.HasPrefix(remaining, word) {
+				arr = append(arr, remaining[len(word):])
+				mapDuplicate[remaining] = true
+			}
+		}
+	}
+
+	return false
+}

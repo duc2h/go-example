@@ -22,7 +22,7 @@ package main
 
 // func main() {
 // 	a := []int{3, 0, 1, 2}
-// 	r := missingNumber1(a)
+// 	r := missingNumber2(a)
 // 	fmt.Println(r)
 // }
 
@@ -53,4 +53,22 @@ func missingNumber(nums []int) int {
 	}
 
 	return -1
+}
+
+func missingNumber2(nums []int) int {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i] > nums[j] {
+				nums[i], nums[j] = nums[j], nums[i]
+			}
+		}
+	}
+
+	for i := 0; i < len(nums); i++ {
+		if i != nums[i] {
+			return i
+		}
+	}
+
+	return len(nums)
 }

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
 
 // You are given a string s and an integer k, a k duplicate removal consists of choosing k adjacent and equal letters from s and removing them, causing the left and the right side of the deleted substring to concatenate together.
@@ -28,12 +26,12 @@ import "fmt"
 // Input: s = "pbbcggttciiippooaais", k = 2
 // Output: "ps"
 
-func main() {
-	s := "pbbcggttciiippooaais"
-	k := 2
-	r := removeDuplicates(s, k)
-	fmt.Println(r)
-}
+// func main() {
+// 	s := "pbbcggttciiippooaais"
+// 	k := 2
+// 	r := removeDuplicates(s, k)
+// 	fmt.Println(r)
+// }
 
 func removeDuplicates(s string, k int) string {
 	for i := 0; i <= len(s)-k; i++ {

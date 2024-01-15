@@ -20,8 +20,8 @@ package main
 // Output: 0
 
 // func main() {
-// 	a := []int{2, 3, 1, 2, 4, 3}
-// 	r := minSubArrayLen(7, a)
+// 	a := []int{1, 2, 3, 4, 5}
+// 	r := minSubArrayLen(11, a)
 // 	fmt.Println(r)
 // }
 

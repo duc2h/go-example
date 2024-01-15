@@ -44,3 +44,15 @@ func rotate(nums []int, k int) {
 	}
 
 }
+
+// func rotate(nums []int, k int) {
+// 	for i := 0; i < k; i++ {
+// 		temp := nums[len(nums)-1]
+// 		for i := len(nums) - 1; i >= 1; i-- {
+// 			nums[i] = nums[i-1]
+// 		}
+// 		nums[0] = temp
+
+// 	}
+
+// }

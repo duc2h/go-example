@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //  https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 // Given a string s, find the length of the longest substring without repeating characters.
@@ -20,10 +22,29 @@ package main
 // Explanation: The answer is "wke", with the length of 3.
 // Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-// func main() {
+func main() {
+	r := lengthOfLongestSubstring("bbbb")
+	fmt.Println(r)
+}
 
-// }
+func lengthOfLongestSubstring(s string) int {
+	count := 0
 
-// func lengthOfLongestSubstring(s string) int {
+	for i := 0; i < len(s); i++ {
+		duplicate := map[byte]bool{}
+		for j := i; j < len(s); j++ {
+			if duplicate[s[j]] {
+				break
+			} else {
+				temp := j - i + 1
+				duplicate[s[j]] = true
 
-// }
+				if count < temp {
+					count = temp
+				}
+			}
+		}
+	}
+
+	return count
+}

@@ -29,21 +29,36 @@ package main
 // 	fmt.Println(r)
 // }
 
+// func twoSum(numbers []int, target int) []int {
+// 	var (
+// 		left  = 0
+// 		right = len(numbers) - 1
+// 	)
+
+// 	for left < right {
+// 		v := target - numbers[right]
+
+// 		if v == numbers[left] {
+// 			return []int{left + 1, right + 1}
+// 		} else if v > numbers[left] {
+// 			left++
+// 		} else {
+// 			right--
+// 		}
+// 	}
+
+// 	return []int{}
+// }
+
 func twoSum(numbers []int, target int) []int {
-	var (
-		left  = 0
-		right = len(numbers) - 1
-	)
+	mapN := map[int]int{}
 
-	for left < right {
-		v := target - numbers[right]
-
-		if v == numbers[left] {
-			return []int{left + 1, right + 1}
-		} else if v > numbers[left] {
-			left++
+	for i, num := range numbers {
+		subtract := target - num
+		if v, exist := mapN[subtract]; exist {
+			return []int{v + 1, i + 1}
 		} else {
-			right--
+			mapN[num] = i
 		}
 	}
 

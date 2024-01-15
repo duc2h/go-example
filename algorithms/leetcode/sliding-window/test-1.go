@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // https://leetcode.com/discuss/interview-question/algorithms/124938/google-subarray-sum-equals-target
 
 // Given a non-empty array nums contains positive integers and a positive integer target.
@@ -25,12 +23,12 @@ import "fmt"
 // Input: nums = [0,2,3], k = 3
 // Output: [2,2]
 
-func main() {
-	nums := []int{0, 2, 3}
-	r := findSubArray1(nums, 3)
+// func main() {
+// 	nums := []int{0, 2, 3}
+// 	r := findSubArray1(nums, 3)
 
-	fmt.Println(r)
-}
+// 	fmt.Println(r)
+// }
 
 func findSubArray1(nums []int, k int) []int {
 	var (
